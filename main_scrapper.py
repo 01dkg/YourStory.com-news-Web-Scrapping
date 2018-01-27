@@ -1,7 +1,11 @@
+# Yourstory.com is a famous blog which cover story about budding startups and small scale comapnies in India.
+#Author: Deepak & Gupta
+#Date: 27/01/2018
+
 import urllib, urllib2
 from bs4 import BeautifulSoup, Comment
 
-url='https://yourstory.com/news/'
+url='https://yourstory.com/socialstory'
 content = urllib2.urlopen(url).read()
 
 soup = BeautifulSoup(content, "html.parser")
