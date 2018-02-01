@@ -2,11 +2,11 @@
 #Author: Deepak & Gupta
 #Date: 27/01/2018
 
-import urllib, urllib2
+import urllib, urllib3
 from bs4 import BeautifulSoup, Comment
 
-url='https://yourstory.com/socialstory'
-content = urllib2.urlopen(url).read()
+url='http://community.powerbi.com/t5/Desktop/bd-p/power-bi-designer'
+content = urllib.request.urlopen(url).read()
 
 soup = BeautifulSoup(content, "html.parser")
 
@@ -17,7 +17,7 @@ desc = soup.find("meta",  property="og:description")
 for i in range(0,2):
 	print ('**'*50)
 
-print(site_name["content"] if title else "No meta site name given")
+#print(site_name["content"] if title else "No meta site name given")
 print(title["content"] if url else "No meta title given")
 print(desc["content"] if url else "No meta desc given")
 
