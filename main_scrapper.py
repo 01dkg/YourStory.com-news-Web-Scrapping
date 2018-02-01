@@ -5,7 +5,7 @@
 import urllib, urllib3
 from bs4 import BeautifulSoup, Comment
 
-url='http://community.powerbi.com/t5/Desktop/bd-p/power-bi-designer'
+url='https://yourstory.com/socialstory'
 content = urllib.request.urlopen(url).read()
 
 soup = BeautifulSoup(content, "html.parser")
@@ -14,16 +14,18 @@ site_name = soup.find("meta",  property="og:site_name")
 title = soup.find("meta",  property="og:title")
 desc = soup.find("meta",  property="og:description")
 
+
 for i in range(0,2):
 	print ('**'*50)
 
 #print(site_name["content"] if title else "No meta site name given")
-print(title["content"] if url else "No meta title given")
-print(desc["content"] if url else "No meta desc given")
-
+#print(title["content"] if url else "No meta title given")
+#print(desc["content"] if url else "No meta desc given")
+titlex = soup.find("class",property="_4dcff094")
+print(titlex)
 for i in range(0,3): print ('**'*50)
 
-for i,row in enumerate(soup.find_all('div',attrs={"class" : "title-small"})):
+for i,row in enumerate(soup.find_all('div',attrs={"class#_4dcff094" : "entry-title"})):
     if i > 9:
         break
     print (str(i+1)+' '+row.text.strip())
