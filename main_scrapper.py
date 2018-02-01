@@ -5,7 +5,7 @@
 import urllib, urllib3
 from bs4 import BeautifulSoup, Comment
 
-url='https://yourstory.com/socialstory'
+url='https://yourstory.com/'
 content = urllib.request.urlopen(url).read()
 
 soup = BeautifulSoup(content, "html.parser")
@@ -18,9 +18,9 @@ desc = soup.find("meta",  property="og:description")
 for i in range(0,2):
 	print ('**'*50)
 
-#print(site_name["content"] if title else "No meta site name given")
-#print(title["content"] if url else "No meta title given")
-#print(desc["content"] if url else "No meta desc given")
+print(site_name["content"] if title else "No meta site name given")
+print(title["content"] if url else "No meta title given")
+print(desc["content"] if url else "No meta desc given")
 titlex = soup.find("class",property="_4dcff094")
 print(titlex)
 for i in range(0,3): print ('**'*50)
